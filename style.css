@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+:root{
+    --Soft-red: hsl(7, 99%, 70%);
+    --Yellow: hsl(51, 100%, 49%);
+    --Dark-desaturated-cyan: hsl(167, 40%, 24%);
+    --Dark-blue: hsl(198, 62%, 26%);
+    --Dark-moderate-cyan: hsl(168, 34%, 41%);
+
+    --Very-dark-desaturated-blue: hsl(212, 27%, 19%);
+    --Very-dark-grayish-blue: hsl(213, 9%, 39%);
+    --Dark-grayish-blue: hsl(232, 10%, 55%);
+    --Grayish-blue: hsl(210, 4%, 67%);
+    --White: hsl(0, 0%, 100%);
+}
+
+body{
+    font-size: 18px;
+    font-family: "barlow", sans-serif;
+}
+
+h1, h2, h3, h4, a{
+    font-family: "fraunces", serif;
+}
+
+header{
+    background-image: url(./images/desktop/image-header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: var(--White);
+    padding-top: 2rem;
+    padding-bottom: 10rem;
+}
+
+nav.navigation{
+    display:flex;
+    justify-content: space-between;
+    padding-inline: 2.5vw;
+    margin-bottom: 5rem;
+}
+
+.navigation__links{
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.navigation__links a {
+    color: var(--Very-dark-desaturated-blue);
+    text-decoration: none;
+    background-color: var(--White);
+    padding: 0.7em 1.5em;
+    border-radius: 100px;
+}
+
+.hamburger {
+    display: none;
+}
+
+header h1{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+    letter-spacing: 10px;
+}
+
+header > img{
+    position: relative;
+    left: 50%;
+    /* animation-name: bounce;
+    animation-duration: 4s;
+    animation-timing-function: ease-in;
+    animation-delay: 2s;
+     */
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce{
+    from{
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate(-50%, 0%);
+    }
+
+}
+
+@media(max-width: 700px) {
+    .navigation__links{
+        /* display: none; */
+        transform: scaleY(0);
+        transition: 0.4s;
+        transform-origin: top;
+        position: absolute;
+        top: 6rem;
+        padding-block: 3rem;
+        background-color: var(--White);
+        color: var(--Dark-blue);
+        width: 90vw;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        z-index: 2;
+
+    }
+
+    .navigation__links::after{
+        content: '';
+        /* these border tricks to create a triangle, check w3schools: how to make basic shapes  */
+        border-left: 25px solid transparent;
+        border-top: 25px solid transparent;
+        border-right: 25px solid var(--White);
+        
+        /* position: absolute will make this pseudo element relative to the navigation__links above because navigation--links is also positioned */
+        position: absolute;
+
+        /* top:-25px to bring it 25px upwards ( the same value as the border above. right:0 to stick it to the right edge of the navigation__links  */
+        top: -25px;
+        right: 0;
+    }
+
+    .navigation__links a {
+        background-color: var(--Yellow);
+
+    }
+
+    nav.navigation {
+        padding-inline: 5vw;
+
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+}
+.flex1{
+    display: flex;
+}
+.flex1 article{
+    justify-content: center;
+    padding: 50px;
+}
+
+.flex1 h2{
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    width: 280px;
+}
+
+.flex1 p{
+    font-family: 'Barlow', sans-serif;
+    margin-bottom: 50px;
+    color: hsl(210, 4%, 67%);
+    line-height: 1.5rem;
+}
+
+
+
+.flex1 img {
+    max-width: 50%;
+    min-height: 100%;
+}
+
+.flex2{
+    display: flex;
+}
+
+.flex2 h2{
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    width: 280px;
+}
+.flex2 p{
+    font-family: 'Barlow', sans-serif;
+    margin-bottom: 50px;
+    color: hsl(210, 4%, 67%);
+    line-height: 1.5rem;
+}
+.flex2 img {
+    max-width: 50%;
+    min-height: 100%;
+}
+
+.flex3{
+    display: flex;
+    text-align: center;
+}
+
+.graphic {
+    background-image: url(/images/desktop/image-graphic-design.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 29rem;
+    padding-bottom: 3rem;
+    max-width: 50%;
+    padding-inline: 10.5rem;
+    color: hsl(198, 62%, 26%);
+}
+
+.photo {
+    background-image: url(/images/desktop/image-photography.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 29rem;
+    padding-bottom: 3rem;
+    max-width: 50%;
+    padding-inline: 10rem;
+    color: hsl(167, 40%, 24%);
+}
+
+.flex3 h3 {
+    margin-bottom: 1.5rem;
+}
+ .flex3 p {
+    line-height: 1.5rem;
+}
+
+
+.testimony{
+    display: flex;
+    text-align: center;
+    gap: 20px;
+    justify-content: center;
+    padding-inline: 10rem;
+}
+
+.testimonial h4 {
+    color: hsl(232, 10%, 55%);
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-align: center;
+    font-family: 'Fraunces', serif;
+}
+
+.testimony img{
+    border-radius: 100%;
+    margin-bottom: 50px;
+    width: 50px;
+}
+.bio{
+    color: hsl(212, 27%, 19%);
+    margin-bottom: 40px;
+}
+
+h5 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+.testimony p:nth-child(4) {
+    color: hsl(210, 4%, 67%);
+    margin-bottom: 100px;
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: auto auto auto auto;   
+}
+
+footer{
+    background-color: lightblue;
+    text-align: center;
+}
+
+footer img{
+    margin-block: 30px;
+}
+
+.bottom{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.icons{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
